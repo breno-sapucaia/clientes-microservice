@@ -1,0 +1,123 @@
+swagger: "2.0"
+info:
+  description: Swagger file
+  version: "1.0.0"
+  title: Swagger ReST Clientes
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+paths:
+  /clientes:
+    get:
+      operationId: clientes.read_all
+      tags:
+        - Clientes
+      summary: Lista de Clientes
+      description: Lista de Clientes
+      responses:
+        200:
+          description: Sucesso na leitura de Clientes
+          schema:
+            type: array
+            items:
+              properties:
+                fname:
+                  type: string
+                lname:
+                  type: string
+                timestamp:
+                  type: string
+
+    post:
+      operationId: clientes.create
+      tags:
+        - Clientes
+      summary: Cria uma pessoa e adiciona na lista de Clientes
+      description: Adiciona na lista de Clientes
+      parameters:
+        - name: person
+          in: body
+          description: Pessoa a ser criada
+          required: True
+          schema:
+            type: object
+            properties:
+              fname:
+                type: string
+                description: Primeiro nome
+              lname:
+                type: string
+                description: Ultimo nome
+      responses:
+        201:
+          description: Sucesso ao criar
+
+  /clientes/{lname}:
+    get:
+      operationId: clientes.read_one
+      tags:
+        - Clientes
+      summary: Leitura de uma pessoa da lista de Clientes
+      description: Leitura de uma pessoa
+      parameters:
+        - name: lname
+          in: path
+          description: Ultimo nome
+          type: string
+          required: True
+      responses:
+        200:
+          description: Sucesso na leitura de uma pessoa
+          schema:
+            properties:
+              fname:
+                type: string
+              lname:
+                type: string
+              timestamp:
+                type: string
+
+    put:
+      operationId: clientes.update
+      tags:
+        - Clientes
+      summary: Update na lista de Clientes
+      description: Update na lista
+      parameters:
+        - name: lname
+          in: path
+          description: Ultimo nome
+          type: string
+          required: True
+        - name: person
+          in: body
+          schema:
+            type: object
+            properties:
+              fname:
+                type: string
+              lname:
+                type: string
+      responses:
+        200:
+          description: Sucesso ao atualizar
+
+    delete:
+      operationId: clientes.delete
+      tags:
+        - Clientes
+      summary: Deletar uma pessoa na lista de Clientes
+      description: Deleta uma pessoa
+      parameters:
+        - name: lname
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Sucesso ao deletar
+

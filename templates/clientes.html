@@ -1,0 +1,50 @@
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias: https://getbootstrap.com.br/docs/3.3/css/#tables -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Clientes App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Clientes App</h1>
+      <div class="section editor"> <label for="fname">Primeiro Nome <input id="fname" class="form-control"
+            type="text"> </label> <br>
+        <label for="lname">Ultimo Nome <input id="lname" type="text" class="form-control"> </label>
+        <br>
+        <button id="create" class="btn btn-primary">Create</button> <button id="reset" class="btn btn-info">Read</button>  <button id="update" class="btn btn-warning">Update</button>
+        <button id="delete" class="btn btn-danger">Delete</button> </div>
+      <br>
+      <blockquote>
+        <p>Clique duas vezes nos nomes abaixo para editar.</p>
+      </blockquote>
+      <div class="conteudo">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Primeiro Nome</th>
+              <th>Ultimo Nome</th>
+              <th>Update Time</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="error"> </div>
+    </div>
+    <script src="static/js/clientes.js"></script>
+
+    <!-- Dependencias Bootstrap: jQuery.js, Popper.js, Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+
